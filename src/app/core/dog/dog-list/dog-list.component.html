@@ -1,0 +1,12 @@
+<mat-list>
+  <mat-form-field class="example-full-width">
+    <input [(ngModel)]="searchText" matInput placeholder="Search breeds">
+  </mat-form-field>
+
+  <mat-list-item *ngFor="let dog of dogs | filter: searchText; let i = index;">
+    <mat-icon style="cursor: pointer;" (click)="goToDog(dog.breed);">call_made</mat-icon>
+    <h4 mat-line>{{i + 1}} {{dog.breed | filter}}</h4>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+
+</mat-list>
